@@ -103,25 +103,26 @@ Y_pred = regressor.predict(X_test)
 
 ```python
 # Create a scatter plot of training data points
-plt.scatter(X_train, Y_train, color='red')
+plt.scatter(X_train, Y_train, color='red', label='Actual')
 # Add the regression line showing predicted values
-plt.plot(X_train, regressor.predict(X_train), color='blue')
+plt.plot(X_train, regressor.predict(X_train), color='blue', label='Predicted')
+# Add a legend to differentiate data points from prediction line
+plt.legend()
 # Add title and axis labels for clarity
 plt.title(f'Hours vs Scores (Training set), MSE = {np.mean((Y_train - regressor.predict(X_train))**2):.2f}')
 plt.xlabel('Hours of Study')
 plt.ylabel('Scores')
-# Add legend to differentiate data points from prediction line
-plt.legend(['Actual', 'Predicted'])
 # Display the visualization
 plt.show()
 ```
 
 **Line-by-line breakdown:**
 
-- `plt.scatter(X_train, Y_train, color='red')` creates a scatter plot showing actual training data points.
-- `plt.plot(X_train, regressor.predict(X_train), color='blue')` adds the regression line representing our model's predictions.
+- `plt.scatter(X_train, Y_train, color='red', label='Actual')` creates a scatter plot showing actual training data points with appropriate label.
+- `plt.plot(X_train, regressor.predict(X_train), color='blue', label='Predicted')` adds the regression line representing our model's predictions with appropriate label.
+- `plt.legend()` automatically creates a legend using the labels specified in the scatter and plot functions.
 - We add a title that includes the Mean Squared Error (MSE) to quantify model performance.
-- We add appropriate labels and a legend to make the visualization informative.
+- We add appropriate labels to make the visualization informative.
 - `plt.show()` renders the plot on screen.
 
 **Key Points Analysis:**
@@ -137,25 +138,26 @@ plt.show()
 
 ```python
 # Create a scatter plot of test data points
-plt.scatter(X_test, Y_test, color='red')
+plt.scatter(X_test, Y_test, color='red', label='Actual')
 # Add the regression line showing predicted values
-plt.plot(X_test, Y_pred, color='blue')
+plt.plot(X_test, Y_pred, color='blue', label='Predicted')
 # Add title and axis labels for clarity
 plt.title(f'Hours vs Scores (Test set), MSE = {np.mean((Y_test - Y_pred)**2):.2f}')
 plt.xlabel('Hours of Study')
 plt.ylabel('Scores')
-# Add legend to differentiate data points from prediction line
-plt.legend(['Actual', 'Predicted'])
+# Add a legend to differentiate data points from prediction line
+plt.legend()
 # Display the visualization
 plt.show()
 ```
 
 **Line-by-line breakdown:**
 
-- Similar to the training visualization, we create a scatter plot of test data points.
-- We plot the regression line showing what our model predicts for each X_test value.
+- Similar to the training visualization, we create a scatter plot of test data points with the 'Actual' label.
+- We plot the regression line showing what our model predicts for each X_test value with the 'Predicted' label.
 - We add a title that includes the Mean Squared Error (MSE) on the test data.
-- We add appropriate labels and a legend to clarify what we're visualizing.
+- We add appropriate labels to clarify what we're visualizing.
+- `plt.legend()` automatically creates a legend using the labels we specified in the plotting functions.
 - `plt.show()` displays the final visualization.
 
 **Key Points Analysis:**
@@ -179,4 +181,4 @@ This simple linear regression model has numerous practical applications:
 
 By mastering this fundamental technique, you've taken your first step into the world of predictive modeling!
 
-```#MachineLearning #DataScience #PythonCoding #LinearRegression #PredictiveAnalytics #DataVisualization #SklearnTutorial #AIBeginners #DataModeling #PythonForML``````#MachineLearning #DataScience #PythonCoding #LinearRegression #PredictiveAnalytics #DataVisualization #SklearnTutorial #AIBeginners #DataModeling #PythonForML```
+```#MachineLearning #DataScience #PythonCoding #LinearRegression #PredictiveAnalytics #DataVisualization #SklearnTutorial #AIBeginners #DataModeling #PythonForML```
